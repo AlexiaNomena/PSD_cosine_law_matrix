@@ -5,3 +5,6 @@ This is a small code for testing the construction of a positive semi-definite ma
 
 ## Theory
 See our paper xxx
+
+## License
+[Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/)
