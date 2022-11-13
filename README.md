@@ -4,7 +4,7 @@ This is a small code for testing the construction of a positive semi-definite ma
 `M_{ij} = (h(i, 0)^2 + h(j, 0)^2 - h(i, j)^2)/2`, where `h` is a specific non-negative symmetric function with defined properties.
 
 ## Description
-`working_points.ipynb`: jupyter notebook to demonstrate that the theory works for two set of points with point coordinated constructed from a contingency dataset and using their representations by Correspondence Analysis.
+`working_points.ipynb`: jupyter notebook to demonstrate that the theory works for two sets of points with point coordinated constructed from a contingency dataset and using their representations in Correspondence Analysis.
 
 `rand_points.ipynb`: jupyter notebook to demonstrate that the theory works on randomly generated points (at least it works for the few trials done with our computers)
 
