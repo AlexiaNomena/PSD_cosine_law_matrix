@@ -1,7 +1,7 @@
 ## PSD cosine law matrix
-This is a small code for testing the sufficient conditions for obtaining a positive semi-definite matrix whose elements is defined as 
+This is a small code for testing the sufficient conditions for obtaining a positive semi-definite matrix **M** with components
 
-`M_{ij} = (h(i, 0)^2 + h(j, 0)^2 - h(i, j)^2)/2`, where `h` is a specific non-negative symmetric function with defined properties.
+`**M**_{ij} = (h(i, 0)^2 + h(j, 0)^2 - h(i, j)^2)/2`, where `h` is a specific non-negative symmetric function with defined properties.
 
 ## Description
 `working_points.ipynb`: jupyter notebook to demonstrate that the theory works for two sets of points with point coordinated constructed from a contingency dataset and using their representations in Correspondence Analysis.
