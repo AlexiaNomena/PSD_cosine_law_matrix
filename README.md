@@ -14,4 +14,4 @@ This is a small code for testing the construction of a positive semi-definite ma
 Mathematical statements and proofs are provided in our paper (comming soon)
 
 ## License
-Creative Commons [Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+November 14, 2022: Creative Commons [Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
