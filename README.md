@@ -8,7 +8,7 @@ This is a small code for testing the construction of a positive semi-definite ma
 
 `rand_points.ipynb`: jupyter notebook to demonstrate that the theory works on randomly generated points (at least it works for the few trials done with our computers)
 
-`rand_points_chgdist.ipynb`: same as `random_example.ipynb` but the distance within set was multiplied by a positive constant
+`rand_points_chgdist.ipynb`: same as `rand_points.ipynb` but the distance within set was multiplied by a positive constant
 
 ## Theory
 Mathematical statements and proofs are provided in our paper xxx 
