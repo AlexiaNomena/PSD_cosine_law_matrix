@@ -1,7 +1,9 @@
 ## PSD cosine law matrix
 This is a small code for testing the sufficient conditions for obtaining a positive semi-definite matrix **M** with components
 
-**M**<sub>ij</sub> = (*h*(i, 0)<sup>2</sup> + *h*(j, 0)<sup>2</sup>  - *h*(i, j)<sup>2</sup> )/2, where *h* is a specific non-negative symmetric function with defined properties.
+**M**<sub>ij</sub> = (*h*(i, 0)<sup>2</sup> + *h*(j, 0)<sup>2</sup>  - *h*(i, j)<sup>2</sup> )/2, where *h* is a specific non-negative symmetric function with defined properties. We term **M** as cosine law matrix because it is obtained from the cosine law between points in Euclidean space.
+
+This is important because **M** is Gram matrix of a set of Euclidean points iff it is positive semi-definite (**M** = **E** **E<sup>T</sup>**). That is any arbitrary set of points generating the cosine law matrix **M** can be embedded into the set of Euclidean points with coordinates obtained on the rows of **E**.
 
 ## Description
 `working_points.ipynb`: jupyter notebook to demonstrate that the theory works for two sets of points with point coordinated constructed from a contingency dataset and using their representations in Correspondence Analysis.
