@@ -1,5 +1,5 @@
 ## PSD cosine law matrix
-This repositorie of codes accompanies our paper on: "Qualitative Euclidean Embedding of Disjoint Sets of points" (link comming soon)
+This repositorie of codes accompanies our paper on: "Qualitative Euclidean Embedding of Disjoint Sets of Points" (link comming soon)
 
 The codes can be used to test the sufficient conditions for obtaining a positive semi-definite matrix **M** with components
 
