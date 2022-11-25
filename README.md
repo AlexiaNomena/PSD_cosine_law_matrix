@@ -17,3 +17,5 @@ This is important because **M** is Gram matrix of a set of Euclidean points iff 
 ## Theory
 Mathematical statements and proofs are provided in our paper (comming soon)
 
+## License
+[GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.html)
