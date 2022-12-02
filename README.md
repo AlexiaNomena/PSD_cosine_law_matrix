@@ -1,5 +1,5 @@
 ## PSD cosine law matrix
-This repositorie of codes accompanies our paper on: "Qualitative Euclidean Embedding of Disjoint Sets of Points" (link comming soon)
+This repositorie of codes accompanies our paper on: ["Qualitative Euclidean Embedding of Disjoint Sets of Points"](arXiv:2212.00058)
 
 The codes can be used to test the sufficient conditions, provided in our paper above, for obtaining a positive semi-definite matrix **M** with components
 
@@ -15,7 +15,8 @@ This is important because **M** is Gram matrix of a set of Euclidean points iff 
 `rand_points_chgdist.ipynb`: same as `rand_points.ipynb` but the distance within set was multiplied by a positive constant
 
 ## Theory
-Mathematical statements and proofs are provided in our paper (comming soon)
+Mathematical statements and proofs are provided in our paper:
+["Qualitative Euclidean Embedding of Disjoint Sets of Points"](arXiv:2212.00058)
 
 ## License
 [GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.html)
