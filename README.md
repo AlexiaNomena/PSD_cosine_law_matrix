@@ -12,7 +12,7 @@ This is important because **M** is Gram matrix of a set of Euclidean points iff 
 
 `rand_points.ipynb`: jupyter notebook to demonstrate that the theory works on randomly generated points (at least it works for the few trials done with our computers)
 
-`rand_points_chgdist.ipynb`: same as `rand_points.ipynb` but the distance within set was multiplied by a positive constant
+`rand_points_chgdist.ipynb`: same as `rand_points.ipynb` but the distance within set was increased by a positive constant
 
 ## Theory
 Mathematical statements and proofs are provided in our paper:
