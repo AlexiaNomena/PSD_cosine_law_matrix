@@ -108,7 +108,7 @@ def Prox_Mat(DX, DY, UX = None, UY = None, fXY = None):
     else:
         D = np.zeros((M+N, M+N))
         D[ :M, M:] = fXY
-        D[M:,  :M] = D[1:M+1, M+1:].T
+        D[M:,  :M] = D[:M, M:].T
         
         D[:M, :M] = DX
         D[M:, M:] = DY
