@@ -75,7 +75,7 @@ def Prox_Mat(DX, DY, UX = None, UY = None, fXY = None):
     M = DX.shape[0]
     N = DY.shape[0]
     
-    if fXY is None or np.all(fXY) == 0:
+    if (fXY is None) or (np.all(np.isclose(fXY, np.zeros((M, N)))) == 0) or (np.any(fXY < 0)):
         sys.exit("fXY non-negative and not zero everywhere is needed \n fXY : Proximity set matrix between the points of X and Y compatible with the positions of the points in DX and DY")
 
     if UX is not None:
