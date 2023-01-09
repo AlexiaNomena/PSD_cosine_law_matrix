@@ -23,7 +23,6 @@ def CosLM(DX, DY, UX = None, UY = None, fXY = None, c = None):
     -------
     CL_Mat : np.array
             Corresponding Cosine Law Matrix with reference at index 0
-
     """
     # compute f^0
     F0 = Prox_Mat(DX, DY, UX, UY, fXY)
@@ -36,7 +35,10 @@ def CosLM(DX, DY, UX = None, UY = None, fXY = None, c = None):
     if (UX is not None) or (UY is not None):
         # only pick the components involving f(X,Y) 
         CC[:M, M+1:] = CL_Mat0[:M, M+1:] 
-        CC[M+1:,:M] = CL_Mat0[M+1: , :M] 
+        CC[M+1:,:M] = CL_Mat0[M+1: , :M]
+    else:
+        CC[:M, M:] = CL_Mat0[:M, M:] 
+        CC[M:,:M] = CL_Mat0[M:,:M]
     
     #pdb.set_trace()
     Ri = np.sum(np.abs(CC), axis = 1)
@@ -74,46 +76,43 @@ def CosLM(DX, DY, UX = None, UY = None, fXY = None, c = None):
 def Prox_Mat(DX, DY, UX = None, UY = None, fXY = None):
     M = DX.shape[0]
     N = DY.shape[0]
-    
     if (fXY is None) or (np.all(np.isclose(fXY, np.zeros((M, N))))) or (np.any(fXY < 0)):
         sys.exit("fXY non-negative and not zero everywhere is needed \n fXY : Proximity set matrix between the points of X and Y compatible with the positions of the points in DX and DY")
 
-    if UX is not None:
-        # put the distance to the origin after all the points of X
-        DX1 = np.concatenate((DX, UX[np.newaxis, :]), axis = 0)
-        DX1 = np.concatenate((DX1,np.concatenate((UX.T, np.array([0])), axis = 0)[:, np.newaxis]), axis = 1)
-
-    if UY is not None:
-        # put the distance to the origin after all the points of X and before all the points of Y
-        DY1 = np.concatenate((UY[np.newaxis, :], DY), axis = 0)
-        DY1 = np.concatenate((np.concatenate((np.array([0]), UY.T), axis = 0)[:, np.newaxis], DY1), axis = 1)
-        
-    if (UX is not None) or (UY is not None):
-        D = np.zeros((M+N+1, M+N+1))
-        D[:M, M+1:] = fXY
-        D[M+1:, :M] = D[:M, M+1:].T
-        
-        if (UX is not None)&(UY is None):
-            D[:M+1, :M+1] = DX1
-            D[M+1:, M+1:] = DY
-    
-        elif (UY is not None)&(UX is None):
-            D[:M, :M] = DX
-            D[M:, M:] = DY1
-            
-        else:
-            D[:M+1, :M+1] = DX1
-            D[M:, M:] = DY1
-    
     else:
-        D = np.zeros((M+N, M+N))
-        D[ :M, M:] = fXY
-        D[M:,  :M] = D[:M, M:].T
-        
-        D[:M, :M] = DX
-        D[M:, M:] = DY
-        
-    return D
-        
-        
+        if UX is not None:
+            # put the distance to the origin after all the points of X
+            DX1 = np.concatenate((DX, UX[np.newaxis, :]), axis = 0)
+            DX1 = np.concatenate((DX1,np.concatenate((UX.T, np.array([0])), axis = 0)[:, np.newaxis]), axis = 1)
     
+        if UY is not None:
+            # put the distance to the origin after all the points of X and before all the points of Y
+            DY1 = np.concatenate((UY[np.newaxis, :], DY), axis = 0)
+            DY1 = np.concatenate((np.concatenate((np.array([0]), UY.T), axis = 0)[:, np.newaxis], DY1), axis = 1)
+            
+        if (UX is not None) or (UY is not None):
+            D = np.zeros((M+N+1, M+N+1))
+            D[:M, M+1:] = fXY
+            D[M+1:, :M] = D[:M, M+1:].T
+            
+            if (UX is not None)&(UY is None):
+                D[:M+1, :M+1] = DX1
+                D[M+1:, M+1:] = DY
+        
+            elif (UY is not None)&(UX is None):
+                D[:M, :M] = DX
+                D[M:, M:] = DY1
+                
+            else:
+                D[:M+1, :M+1] = DX1
+                D[M:, M:] = DY1
+        
+        else:
+            D = np.zeros((M+N, M+N))
+            D[ :M, M:] = fXY
+            D[M:,  :M] = D[:M, M:].T
+            
+            D[:M, :M] = DX
+            D[M:, M:] = DY
+        
+        return D
